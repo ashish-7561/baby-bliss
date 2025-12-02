@@ -15,7 +15,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 
-// --- Mock Data ---
+
 const CATEGORIES = [
   { id: 1, name: 'Girl Fashion', color: 'bg-pink-100', icon: '👗' },
   { id: 2, name: 'Boy Fashion', color: 'bg-blue-100', icon: '👕' },
@@ -100,7 +100,7 @@ export default function App() {
   const [notificationStatus, setNotificationStatus] = useState('default');
   const [showNotificationModal, setShowNotificationModal] = useState(false);
 
-  // --- Notification Logic (PWA Feature) ---
+
   useEffect(() => {
     if ('Notification' in window) {
       setNotificationStatus(Notification.permission);
@@ -134,7 +134,7 @@ export default function App() {
     }
   };
 
-  // --- Cart Logic ---
+
   const addToCart = (product) => {
     setCart([...cart, { ...product, cartId: Date.now() }]);
     // Trigger a small vibration on mobile if supported
@@ -151,7 +151,7 @@ export default function App() {
 
   const HomeView = () => (
     <div className="pb-20 bg-slate-50 min-h-screen">
-      {/* Hero Header */}
+   
       <div className="bg-gradient-to-r from-pink-400 to-rose-400 text-white p-6 rounded-b-3xl shadow-lg relative overflow-hidden">
         <div className="absolute top-0 right-0 opacity-20 transform translate-x-10 -translate-y-10">
           <Baby size={180} />
@@ -166,7 +166,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Categories */}
+   
       <div className="px-4 mt-6">
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-lg font-bold text-gray-800">Shop by Category</h2>
@@ -184,7 +184,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Featured Products */}
+
       <div className="px-4 mt-2">
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-lg font-bold text-gray-800">Trending Now</h2>
@@ -225,7 +225,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* PWA Demo Section */}
+    
       <div className="m-4 mt-8 p-6 bg-indigo-900 rounded-2xl text-white relative overflow-hidden">
          <div className="relative z-10">
            <h3 className="text-xl font-bold mb-2">PWA Notification Demo</h3>
@@ -309,7 +309,7 @@ export default function App() {
   return (
     <div className="font-sans text-gray-800 max-w-md mx-auto shadow-2xl min-h-screen bg-white relative overflow-hidden">
       
-      {/* Top Navigation - Emoji Removed */}
+
       <div className="fixed top-0 w-full max-w-md bg-white/90 backdrop-blur-md z-50 px-4 py-3 flex justify-between items-center shadow-sm">
         <div className="flex items-center gap-2">
           <button className="text-gray-600"><Menu size={24} /></button>
@@ -330,7 +330,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Main Content Area */}
+   
       <div className="pt-16">
         {activeTab === 'home' && <HomeView />}
         {activeTab === 'cart' && <CartView />}
@@ -368,7 +368,6 @@ export default function App() {
         )}
       </div>
 
-      {/* Bottom Navigation Bar */}
       <div className="fixed bottom-0 w-full max-w-md bg-white border-t border-gray-100 flex justify-around items-center py-3 pb-safe z-50">
         <button 
           onClick={() => setActiveTab('home')}
@@ -396,7 +395,7 @@ export default function App() {
         </button>
       </div>
 
-      {/* Permissions Modal */}
+  
       {showNotificationModal && (
         <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl p-6 max-w-xs text-center">
